@@ -1,6 +1,3 @@
-#Interview Prep
-> Common questions and things to study. 
-
 ##JavaScript
 ####What are the 2 most important paradigms of JS? Why?
 * OOP
@@ -191,19 +188,3 @@ selections.push (this.prop("name")); // update the selections variable in the ou
 ####What are promises? Why use them? Give an example of how to use them.
 
 ####Your favorite part about es6? Some examples of when you don't want to use es6.
-
-
-##HTML/CSS
-####Height of box around floats so that it doesn't disappear
-* overflow: auto;
-
-####What is a media query
-
-####positives and negative of using a CSS pre-processor?
-#####positives:
-
-#####negatives:
-
-####Resources:
-[10 Questions Every JS Developer Should Know](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95#.wnhwoz4cx)
-[What is a closure](http://javascriptissexy.com/understand-javascript-closures-with-ease/)
