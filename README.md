@@ -11,3 +11,5 @@
 [JavaScript is Sexy](http://javascriptissexy.com/16-javascript-concepts-you-must-know-well/)
 
 [Learning JS Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+
+[CSS Interview Questions](http://www.skilledup.com/articles/25-css-interview-questions-answers)
