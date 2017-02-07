@@ -183,8 +183,6 @@ selections.push (this.prop("name")); // update the selections variable in the ou
       ```
 
 
-####People in development I look up to
-
 ####What are promises? Why use them? Give an example of how to use them.
 
-####Your favorite part about es6? Some examples of when you don't want to use es6.
+####Your favorite part about es6?
