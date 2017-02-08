@@ -8,7 +8,7 @@
      - Tend to be imperative rather than declarative, which reads like a straight-forward set of instructions.
   - **Cons:**
      - Typically depends on shared state
-     - Objects and behaviors are typically tied together on the same entity, which mayb be accessed randomly by any number of functions. ==> *race conditions* and competition for resources
+     - Objects and behaviors are typically tied together on the same entity, which may be accessed randomly by any number of functions. ==> *race conditions* and competition for resources
 * **Functional Programming**
   - Supported by the use of functions as arguments, closures, higher order functions, lambdas
   - Produces programs by composing mathematical functions
@@ -22,12 +22,12 @@
      - Removes fear of resource conflicts and *race conditions*
   - **Cons:**
      - Over exploitation can reduce readability through abstraction
-     - Can be confusing, becuase most people are used to OO programming
+     - Can be confusing, because most people are used to OO programming
      - Steeper learning curve
 
 ####What is the difference between Protypal and Class inheritance?
 * **Class inheritance**
-  - instances inherit from classes (like a blueprint), and create sub-class relationshipes: heirarchical class taxonomies.
+  - instances inherit from classes (like a blueprint), and create sub-class relationships: heirarchical class taxonomies.
   - Instances typically instantiated via constructor functions with *'new'* keyword.
   - Creates tight coupling/hierarchies
   - NEVER appropriate, always favor composition over class inheritance
@@ -74,14 +74,14 @@
 * Derived from **functional programming**
 * You can use named OR anonymous functions.
   - examples using anonymous functions:
-  
+
    ```
    //Note that the item in the click method's parameter is a function, 	not a variable.​
 	​//The item is a callback function
 	$("#btn_1").click(function() {
 	  alert("Btn 1 Clicked");
 	});
-	
+
 	//javascript example
 	var friends = ["Mike", "Stacy", "Andy", "Rick"];
 ​
@@ -89,7 +89,7 @@
 	console.log(index + 1 + ". " + eachName); // 1. Mike, 2. Stacy, 3. 	Andy, 4. Rick​
 	});
 	```
-	
+
   - example using named function:
 
   ```
@@ -127,20 +127,20 @@ getInput ({name:"Rich", speciality:"JavaScript"}, logStuff);
   ```
 * It is a good idea to check if the callback function is indeed a function
   ``if (typeof callback === "function") {
-        callback(options);}`` 
-        
+        callback(options);}``
+
 * Avoid **callback hell**
 * Benefits of callbacks
   - DRY, more readable
   - Maintainable
-  - Implement better abstration where you can have more generic functions that are versatile (can handle all sorts of functionalities)
+  - Implement better abstraction where you can have more generic functions that are versatile (can handle all sorts of functionalities)
 
 ####What is event Bubbling/Delegation? Can you give an example?
 
 ####What is a closure?
 * [explanation](http://javascriptissexy.com/understand-javascript-closures-with-ease/)
 * [more about closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
-*  closure is the combination of a function and the lexical environment (or simply "environment") within which that function was declared. 
+*  closure is the combination of a function and the lexical environment (or simply "environment") within which that function was declared.
 * An inner function that has access to the outer (enclosing) function's variables -- scope chain. The closure has 3 scope chains
 	- Access to it's own scope
 	- Access to outer function's variables
@@ -171,7 +171,7 @@ showName ("Michael", "Jackson"); // Your name is Michael Jackson
 ```
 $(function() {
 ​
-​var selections = []; 
+​var selections = [];
 $(".niners").click(function() { // this closure has access to the selections variable​
 selections.push (this.prop("name")); // update the selections variable in the outer function's scope​
 });
@@ -185,7 +185,7 @@ selections.push (this.prop("name")); // update the selections variable in the ou
   - Closures store references to the outer function's variables
       - They do not store the actual value. If the outer function's variable changes the closure will note and use that change
   - If the outer function's variable changes it can lead to bugs. (i.e. with a for loop)
-  
+
   	```
 	// This example is explained in detail below (just after this code box).​
 ​function celebrityIDCreator (theCelebrities) {
@@ -196,7 +196,7 @@ selections.push (this.prop("name")); // update the selections variable in the ou
         return uniqueID + i;
       }
     }
-    
+
     return theCelebrities;
 }
 ​
@@ -206,7 +206,7 @@ selections.push (this.prop("name")); // update the selections variable in the ou
 ​
 ​var stalloneID = createIdForActionCelebs [0];  console.log(stalloneID.id()); // 103 
   	```
-      - To fix this you can **immediately invoke a function expression** 
+      - To fix this you can **immediately invoke a function expression**
       - or use let, instead of var since the closure will bind the block scoped variable.
 
     ```
