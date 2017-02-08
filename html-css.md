@@ -1,5 +1,5 @@
 ##HTML/CSS
-####If you have two elements inside of an outer containing element, one with float: left; and other with float: right;, how can you ensure that the containing element exapands around the floated elements and does not collapse?
+####If you have two elements inside of an outer containing element, one with float: left; and other with float: right;, how can you ensure that the containing element expands around the floated elements and does not collapse?
 * on the containing element => `overflow: auto;`
 * using a clearfix
 
@@ -16,32 +16,32 @@
 
 ####positives and negatives of using a CSS pre-processor?
 #####positives:
-* ablility to nest, define variables and mixins, use of mathematical operations, ability to join multiple files into one file
+* ability to nest, define variables and mixins, use of mathematical operations, ability to join multiple files into one file
 
 #####negatives:
 * difficulty tracking file size, maintenance and updating, difficulties debugging
 
 ####What is a pseudo class? What are they used for?
-* Pseudo classes are similar to classes, but no explicitly definted in the markup.
+* Pseudo classes are similar to classes, but not explicitly defined in the markup.
 * Used for addition effects to selected HTML element.
   - i.e. link colors, hover actions, etc
 * Syntax: selector:pseudo-class. (a:link, a:visited)
 
 ####Explain the 3 main ways to apply CSS styles to a Web page:
 * Inline
-  - use very sparingly. Done by inserting a 'style' attribut inside an HTML element.
+  - use very sparingly. Done by inserting a 'style' attribute inside an HTML element.
 * Embedded/Internal
   - `<style>` tag in head of HTML document
 * Linked/External
   - CSS is in an external .css file and linked in HTML document with `<link>` tags
 
 ####What is grouping?
-* Grouping allows you to apply the same style to multiple elements with a single declaration using a selector list, serparated by commas.
+* Grouping allows you to apply the same style to multiple elements with a single declaration using a selector list, separated by commas.
 * Enhances memory usage and readability 
 
 
 ####What are pseudo-elements and how are they made?
-* Made by using a double colon (::) followed by tht ename of the pseudo element
+* Made by using a double colon (::) followed by the name of the pseudo element
 * Used to add special effects to some selectors.
   - Can only be applied to block level elements
 * Examples (::first_line, ::first_letter, ::before, ::after)
@@ -62,9 +62,9 @@
 
 ####Why shouldn't I use fixed sized fonts?
 * They often show up incorrectly on the user end which will prohibit responsiveness
-* Relative sizing allows fonts to be kept proportionate in their relationships to eachother === more flexibility.
+* Relative sizing allows fonts to be kept proportionate in their relationships to each other === more flexibility.
 
-####What are some of the new freatures of CSS3?
+####What are some of the new features of CSS3?
 * Box Model
 * Web fonts
 * Rounded corners
