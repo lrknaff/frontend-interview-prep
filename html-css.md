@@ -1,5 +1,5 @@
 ##HTML/CSS
-####If you have two elements inside of an outer containing element, one with float: left; and other with float: right;, how can you ensure that the containing element exapands around the floated elements and does not collapse?
+####If you have two elements inside of an outer containing element, one with float: left; and other with float: right;, how can you ensure that the containing element expands around the floated elements and does not collapse?
 * on the containing element => `overflow: auto;`
 * using a clearfix
 
@@ -72,7 +72,6 @@
 * Box Shadows, Text Shadows
 * Transform property
 * Multi-column layout
-
 
 ####Why and how are shorthand properties used?
 * Used to improve page load times/reduce file size
