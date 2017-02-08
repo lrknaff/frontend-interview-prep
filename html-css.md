@@ -1,9 +1,18 @@
 ##HTML/CSS
 ####If you have two elements inside of an outer containing element, one with float: left; and other with float: right;, how can you ensure that the containing element exapands around the floated elements and does not collapse?
-* on the containing element => overflow: auto;
+* on the containing element => `overflow: auto;`
 * using a clearfix
 
-####What is a media query
+  ```.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}```
+
+####What are Media Queries?
+* A CSS3 Module that allows content rendering to adapt to conditions such as screen resolutions
 
 ####positives and negatives of using a CSS pre-processor?
 #####positives:
@@ -68,3 +77,8 @@
 ####Why and how are shorthand properties used?
 * Used to improve page load times/reduce file size
 * Accomplished by listing the property values on a single line
+
+####What's the difference between inline, inline-block and block?
+* **Block:** Has some whitespace above and below it and does not tolerate HTML elements next to it. `<div>, <h1>, <p>, <form>`
+* **Inline:** Does not start on a new line and only takes up as much width as necessary. Respects left & right margins and padding but **not** top and bottom `<span>, <a>, <img>`
+* **Inline-Block:** Placed as an inline element but behaves as a block element. Respect top and bottom, width and height.
