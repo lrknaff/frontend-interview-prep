@@ -280,6 +280,70 @@ selections.push (this.prop("name")); // update the selections variable in the ou
 * [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
 * **Bind:** The *Bind()* method is used primarily to call a function with the *this* value set explicitly.
   - the need for this usually occurs when you use the *this* keyword in a method from a receiver object; in such cases, sometimes *this* is not bound to the object you would expect it to be bound to.
+  - Example:
+
+  ```
+  //            <button>Get Random Person</button>​
+​//        <input type="text">​
+​
+​
+​var user = {
+    data        :[
+        {name:"T. Woods", age:37},
+        {name:"P. Mickelson", age:43}
+    ],
+    clickHandler:function (event) {
+        var randomNum = ((Math.random () * 2 | 0) + 1) - 1; // random 	number between 0 and 1​
+​
+        // This line is adding a random person from the data array to 	the text field​
+        $ ("input").val (this.data[randomNum].name + " " + 	this.data[randomNum].age);
+    	}
+​
+	}
+  $ ("button").click (user.clickHandler.bind (user));
+  ```
+
+  - Can also use for *currying*: passing one or more arguments. The function then has access to stored arguments and variables of the outer function.
+* **Apply/Call:** Allow us to borrow functions and set the *this* value in function invocation.
+  - *Apply* function in particular allows us to execute a function with an array of parameters, such that each parameter is passed to the function individually when the function executes.
+     - great for **variadic** functions; which takes a varying number of arguments, not a set number like most functions.
+  - Can be used to set the *this* value
+  - The most common use is for **borrowing functions**
+     - borrowing array methods from array-like objects
+
+     ```
+     // An array-like object: note the non-negative integers used as keys​
+                var anArrayLikeObj = {0:"Martin", 1:78, 2:67, 3:["Letta", "Marieta", "Pauline"], length:4 };
+     ```
+     Now, if wish to use any of the common Array methods on our object, we can:
+
+     ```
+     // Make a quick copy and save the results in a real array:​
+                // First parameter sets the "this" value​
+                var newArray = Array.prototype.slice.call (anArrayLikeObj, 0);
+​
+                console.log (newArray); // ["Martin", 78, 67, Array[3]]​
+​
+                // Search for "Martin" in the array-like object​
+                console.log (Array.prototype.indexOf.call (anArrayLikeObj, "Martin") === -1 ? false : true); // true​
+​
+                // Try using an Array method without the call () or apply ()​
+                console.log (anArrayLikeObj.indexOf ("Martin") === -1 ? false : true); // Error: Object has no method 'indexOf'​
+​
+                // Reverse the object:​
+                console.log (Array.prototype.reverse.call (anArrayLikeObj));
+                // {0: Array[3], 1: 67, 2: 78, 3: "Martin", length: 4}​
+​
+                // Sweet. We can pop too:​
+                console.log (Array.prototype.pop.call (anArrayLikeObj));
+                console.log (anArrayLikeObj); // {0: Array[3], 1: 67, 2: 78, length: 3}​
+​
+                // What about push?​
+                console.log (Array.prototype.push.call (anArrayLikeObj, "Jackie"));
+                console.log (anArrayLikeObj); // {0: Array[3], 1: 67, 2: 78, 3: "Jackie", length: 4}​
+     ```
+     - Borrow 'string' methods
+     - Borrow other methods and functions
 
 ####What is two-way data binding and one-way data flow? How are they different?
 * **Two-way data binding**: UI fields are bound to model data dynamically such that when a UI field changes, the model data changes with it
