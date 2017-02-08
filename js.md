@@ -37,6 +37,7 @@
   - May be composed from many different objects, allowing for easy selective inheritance
   - Much easier to work with than class inheritance
   - *There are 3 types:*
+     - [Read](https://medium.com/javascript-scene/3-different-kinds-of-prototypal-inheritance-es6-edition-32d777fa16c9#.vs44bdiyf)
      - **Delegation** (prototype chain)
      - **Concatenative** (mixins, 'Object.assign()')
      - **Functional** (A function used to create a closure for private state/encapsulation)
@@ -136,6 +137,19 @@ getInput ({name:"Rich", speciality:"JavaScript"}, logStuff);
   - Implement better abstraction where you can have more generic functions that are versatile (can handle all sorts of functionalities)
 
 ####What is event Bubbling/Delegation? Can you give an example?
+* [Read](https://learn.jquery.com/events/event-delegation/)
+* **Event Bubbling/Propagation:** An event received by an element doesn't stop with that one element. It moves to other elements like the parent, and other ancestors of the element.
+* **Event Delegation:** Event delegation allows us to attach a single event listener, to a parent element, that will fire for all descendants matching a selector, whether those descendants exist now or are added in the future.
+  - Uses event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated.
+  - Example of using **event delegation** (The second, selector parameter tells the handler to listen for the specified event, and when it hears it, checks to see if the triggering element for that event matches the second parameter):
+
+  ```
+  // Attach a delegated event handler
+	$( "#list" ).on( "click", "a", function( event ) {
+    event.preventDefault();
+    console.log( $( this ).text() );
+});
+  ```
 
 ####What is a closure?
 * [explanation](http://javascriptissexy.com/understand-javascript-closures-with-ease/)
@@ -237,13 +251,35 @@ selections.push (this.prop("name")); // update the selections variable in the ou
 
 
 ####What are promises? Why use them? Give an example of how to use them.
-* [Read](https://gist.github.com/domenic/3889970)
+* [You're Missing the Point of Promises.](https://gist.github.com/domenic/3889970)
+* [What's the Point of Promises?](http://www.telerik.com/blogs/what-is-the-point-of-promises)
+* A promise represents the eventual result of an asynchronous operation. It is a placeholder into which the successful result value or reason for failure will materialize.
+* A promise is an object that requires one method: **then**
+  - **then** takes up to three arguments (success callback, failure callback, and progress callback)
+* A promise can be in one of three states:
+  - unfulfilled
+  - fulfilled
+  - failed
+* Why use promises?
+  - to avoid *callback hell* or the *pyramid of doom*
+  - Makes things much easier to read
+  - Parallel synchronous operations
 
 ####Your favorite part about es6?
 * [Read](https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond)
+* Subjective opinion.
+* Some ideas:
+  - template literals
+  - default parameters
+  - destructuring
+  - arrow functions
+  - promises
+  - let and const
 
-####hat is Apply, Call and Bind methods? Why are they an essential part of JS?
-* [Read](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
+####What are Apply, Call and Bind methods? Why are they an essential part of JS?
+* [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
+* **Bind:** The *Bind()* method is used primarily to call a function with the *this* value set explicitly.
+  - the need for this usually occurs when you use the *this* keyword in a method from a receiver object; in such cases, sometimes *this* is not bound to the object you would expect it to be bound to.
 
 ####What is two-way data binding and one-way data flow? How are they different?
 * **Two-way data binding**: UI fields are bound to model data dynamically such that when a UI field changes, the model data changes with it
