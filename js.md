@@ -45,6 +45,9 @@
      - When you need to compose objects from multiple sources
      - When you need inheritance
 
+####Be able to implement a simple application using ES6 classes and prototypal inheritance.
+This is a technical interview question that can cause problems for unprepared applicants. For more details, see [this repo](https://github.com/gness1804/comment-section)
+
 ####Describe the difference between var, let and const
 * **const**:
   - es6, identifier **cannot** be reassigned
@@ -354,3 +357,6 @@ selections.push (this.prop("name")); // update the selections variable in the ou
   - When the response is ready, an interrupt is fired, which causes an event handler to be run, where the control flow continues. In this way, a single program thread can handle many concurrent operations.
 * This is important in JavaScript, because it is a very natural fit for user interface code, and very beneficial to performance on the server.
 * Synchronous programming means that, barring conditionals and function calls, code is executed sequentially from top-to-bottom, blocking on long-running tasks such as network requests and disk I/O.
+
+####What is console shimming?
+* A workaround when a browser has no or incomplete console support. Since the console is so critical for JS debugging, it's necessary to have access to one in a browser. Console shimming typically involves creating a dummy console and/or fallback functions for cases when browsers' native consoles are insufficient. For more info, see [this repo](https://github.com/kayahr/console-shim)
