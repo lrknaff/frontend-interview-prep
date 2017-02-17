@@ -360,3 +360,62 @@ selections.push (this.prop("name")); // update the selections variable in the ou
 
 ####What is console shimming?
 * A workaround when a browser has no or incomplete console support. Since the console is so critical for JS debugging, it's necessary to have access to one in a browser. Console shimming typically involves creating a dummy console and/or fallback functions for cases when browsers' native consoles are insufficient. For more info, see [this repo](https://github.com/kayahr/console-shim)
+
+####Describe the difference between a cookie, sessionStorage and localStorage.
+* [Client Side Storage](https://github.com/turingschool/lesson_plans/blob/3ee469be5fdc94c926a88ca510106848b0339731/ruby_04-apis_and_scalability/client_side_storage.markdown)
+* **Cookies**:
+	- Before HTML5 was introduced, the primary mechanism for storing information in the browser was cookies.
+	- Limitations:
+		- Not able to hold a lot of data (a limit of 4095 bytes)
+		- Sent to the server every time you request a page from that domain
+		- Not considered secure. Cookies are vulnerable to cross-site request forgery (CSRF) 	
+* **Local Storage and Session Storage**: ML5 introduced a storage object to help users store data in the browser. The storage object has two different types localStorage and sessionStorage and both types share the same methods.
+* They both store data in Key/Value pairs of strings.
+* To protect the user, the data stored in localStorage and sessionStorage is shared only under the same origin policy - meaning that it is stored in the browser but only accessible to pages with the same domain as that which stored it.
+	- **Session Storage**: does not persist outside of the users session - useful for semi-private user information or rapidly changing data.
+	- **Local Storage**: persists across tabs and is useful for data that should be stored offline.
+
+####Difference between: function Person(){}, var person = Person(), and var person = new Person()?
+* [Different Ways of Defining Functions](http://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/)
+* `function Person(){`: function declaration. Needs a name.
+* `var person = Person()`: function expression. Can be anonymous `var B = function(){};`. Do to hoisting, order matters.
+* `var person = new Person()`: function constructor
+
+####What is the difference between == and ===
+* [Equality Comparisons](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+* `==`: Abstract Equality Comparison. Loose or 'Abstract' equality compares two value for equality, *after* converting both values to a common type
+* `===`: Strict Equality Comparison. Compare two values for equality
+
+####Question: What is the value of foo?
+* `var foo = 10 + '20';`=== '1020'
+
+####Question: What value is returned from the following statement?
+`"i'm a lasagna hog".split("").reverse().join("");` === "goh angasal a m'i"
+
+####Explain event delegation
+* [Event Bubbline and Delegation](http://frontend.turing.io/lessons/event-bubbling-and-delegation.html)
+
+####What does CORS stand for and what issue does it address?
+* [CORS](http://frontend.turing.io/lessons/cors.html)
+
+####Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+* [Read](http://frontend.turing.io/lessons/module-1/js-2.html)
+
+####Explain why the following doesn't work as an IIFE: function foo(){ }();
+* [Scopes and Closures](https://docs.google.com/presentation/d/1zX-A4d_yMFPrVpofoIP5FLSjOb94vBzORql-BOV2vUc/edit#slide=id.g1c494e40cb_0_48)
+* [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+* What needs to be changed to properly make it an IIFE?
+
+####How do you serve a page with content in multiple languages?
+* [Localization](http://frontend.turing.io/lessons/localization.html)
+
+####What is "use strict";? what are the advantages and disadvantages to using it?
+* [Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
+
+####What are the pros and cons of using Promises instead of callbacks?
+* [Making and Keeping Promises](http://frontend.turing.io/lessons/promises.html)
+* [ES6 Generators](http://frontend.turing.io/lessons/es6-generators.html)
+
+####Explain Ajax in as much detail as possible.
+* [Ajax Intro](https://www.w3schools.com/xml/ajax_intro.asp)
+* [jQuery Ajax](http://api.jquery.com/jquery.ajax/)
