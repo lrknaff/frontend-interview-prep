@@ -3,11 +3,11 @@
 * on the containing element => `overflow: auto;`
 * using a clearfix
 
-  ```.clearfix:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
+  ```.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
    clear: both;
 }```
 
@@ -22,7 +22,11 @@
 * difficulty tracking file size, maintenance and updating, difficulties debugging
 
 ####What is a pseudo class? What are they used for?
+<<<<<<< HEAD
 * Pseudo classes are similar to classes, but not explicitly defined in the markup.
+=======
+* Pseudo classes are similar to classes, but no explicitly defined in the markup.
+>>>>>>> 877734961c5ac9ae79d4923ed6a5a5aa141315f4
 * Used for addition effects to selected HTML element.
   - i.e. link colors, hover actions, etc
 * Syntax: selector:pseudo-class. (a:link, a:visited)
@@ -37,7 +41,11 @@
 
 ####What is grouping?
 * Grouping allows you to apply the same style to multiple elements with a single declaration using a selector list, separated by commas.
+<<<<<<< HEAD
 * Enhances memory usage and readability 
+=======
+* Enhances memory usage and readability
+>>>>>>> 877734961c5ac9ae79d4923ed6a5a5aa141315f4
 
 
 ####What are pseudo-elements and how are they made?
@@ -72,7 +80,6 @@
 * Box Shadows, Text Shadows
 * Transform property
 * Multi-column layout
-
 
 ####Why and how are shorthand properties used?
 * Used to improve page load times/reduce file size
