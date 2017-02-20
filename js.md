@@ -25,7 +25,8 @@
      - Can be confusing, because most people are used to OO programming
      - Steeper learning curve
 
-####What is the difference between Protypal and Class inheritance?
+####What is the difference between Prototypal and Class inheritance?
+
 * **Class inheritance**
   - instances inherit from classes (like a blueprint), and create sub-class relationships: heirarchical class taxonomies.
   - Instances typically instantiated via constructor functions with *'new'* keyword.
@@ -360,3 +361,52 @@ selections.push (this.prop("name")); // update the selections variable in the ou
 
 ####What is console shimming?
 * A workaround when a browser has no or incomplete console support. Since the console is so critical for JS debugging, it's necessary to have access to one in a browser. Console shimming typically involves creating a dummy console and/or fallback functions for cases when browsers' native consoles are insufficient. For more info, see [this repo](https://github.com/kayahr/console-shim)
+
+####What is a function declaration versus function expression? 
+* A function declaration is simply instantiating a function, like so: 
+```
+  function foo () {
+    console.log('foobar')
+    }
+```
+
+A function expression, by contrast, is a function that is either set equal to a variable (expresses a relationship) or an IIFE (Immediately Invoked Function Expression): 
+```
+  var foo = function(){
+    console.log('foobar')}  
+```
+The two examples above are very similar, except that the latter is not hoisted, as explained in the next section. Another difference between function expressions and function declarations is that function declarations must be named, while function expressions can be anonymous. (See the section in IIFEs below for more discussion on them).
+
+####What is hoisting, and why does it matter? 
+* Hoisting is JavaScript's behavior of putting declarations into memory before actually executing code. What this means is that one can write a var declaration below a function using that variable, and the code will still run because the var declaration is put into memory before the function is executed. Similarly, functions can be declared below where they are called, and hoisting works the same way (function expressions, however, are not hoisted, meaning that they must be instantiated before they are referenced). An example from the [MDN docs](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting):
+```
+catName("Chloe");
+
+function catName(name) {
+    console.log("My cat's name is " + name);
+}
+/*
+The result of the code above is: "My cat's name is Chloe"
+*/
+```
+Note, however, that JS only hoists declarations (like var x;) NOT expressions (var x = 2). This means that you must initialize a var (set it to an actual value) before referencing it, or it will return undefined. The code below, from the same MDN doc, will throw an error for this reason:
+```
+  var x = 1; // Initialize x
+  console.log(x + " " + y);  //y is undefined
+  var y = 2;
+  //the above code and the below code are the same
+
+  var x = 1; // Initialize x
+  var y; // Declare y
+  console.log(x + " " + y);  //y is undefined
+  y = 2; // Initialize y
+```
+
+####What are Immediately Invoked Function Expressions (IIFEs)?
+IIFEs are functions that are called immediately once they are created. By contrast, a regular function must be called separately, via a function call like `getData()`. An IIFE looks like this:
+```
+  (function getData(){
+    console.log('I will get the data as soon as the JS engine reads me!')
+    })():
+```
+IIFEs are often used to protect data from the global scope. They can also be useful if one wants to execute code when the page loads and doesn't want to bother with something like a `load` event listener or adding an additonal line of code to call a previously created function. 
