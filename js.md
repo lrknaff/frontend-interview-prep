@@ -46,6 +46,18 @@
      - When you need to compose objects from multiple sources
      - When you need inheritance
 
+####How many data types are there in JS/What are they?
+Different interviewers will likely have different opinions on this, but the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures) define six main JS data types:
+* String
+* Number (note that JS does not distinguish in type assignment between integers and decimals)
+* Boolean
+* Undefined (when a variable is referenced that does not have a value)
+* Null (an assigned value; the intentional assignment of a var to a value of nothing)
+* Object (includes Function, Array, and Object)
+
+####Why are Functions and Arrays considered Objects in JS?
+JS was written to be an object oriented language. All objects in JS, broadly defined, inherit from `Object.prototype`, while arrays inherit from `Array.prototype` and functions from `Function.prototype`, which in turn inherit from `Object.Prototype.` This structure has shaped the language and its emphasis on prototypal inheritance as a core data architecture. 
+
 ####Be able to implement a simple application using ES6 classes and prototypal inheritance.
 This is a technical interview question that can cause problems for unprepared applicants. For more details, see [this repo](https://github.com/gness1804/comment-section)
 
@@ -269,6 +281,9 @@ selections.push (this.prop("name")); // update the selections variable in the ou
   - Makes things much easier to read
   - Parallel synchronous operations
 
+####How does one pinpoint the source of an error in a lengthy promise chain? 
+One can use `.catch()` or a second callback to `.then()` to trigger when a given promise fails.
+
 ####Your favorite part about es6?
 * [Read](https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond)
 * Subjective opinion.
@@ -378,8 +393,10 @@ A function expression, by contrast, is a function that is either set equal to a 
 The two examples above are very similar, except that the latter is not hoisted, as explained in the next section. Another difference between function expressions and function declarations is that function declarations must be named, while function expressions can be anonymous. (See the section in IIFEs below for more discussion on them).
 
 ####What is hoisting, and why does it matter? 
-* Hoisting is JavaScript's behavior of putting declarations into memory before actually executing code. What this means is that one can write a var declaration below a function using that variable, and the code will still run because the var declaration is put into memory before the function is executed. Similarly, functions can be declared below where they are called, and hoisting works the same way (function expressions, however, are not hoisted, meaning that they must be instantiated before they are referenced). An example from the [MDN docs](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting):
+* Hoisting is JavaScript's behavior of putting declarations into memory before actually executing code. What this means is that one can write a var declaration below a function using that variable, and the code will still run because the var declaration is put into memory before the function is executed. Similarly, functions can be declared below where they are called, and hoisting works the same way (function expressions, however, are not hoisted, meaning that they must be instantiated before they are referenced). An example from the [MDN docs](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting): 
+
 ```
+
 catName("Chloe");
 
 function catName(name) {
@@ -390,6 +407,7 @@ The result of the code above is: "My cat's name is Chloe"
 */
 ```
 Note, however, that JS only hoists declarations (like var x;) NOT expressions (var x = 2). This means that you must initialize a var (set it to an actual value) before referencing it, or it will return undefined. The code below, from the same MDN doc, will throw an error for this reason:
+
 ```
   var x = 1; // Initialize x
   console.log(x + " " + y);  //y is undefined
@@ -410,3 +428,8 @@ IIFEs are functions that are called immediately once they are created. By contra
     })():
 ```
 IIFEs are often used to protect data from the global scope. They can also be useful if one wants to execute code when the page loads and doesn't want to bother with something like a `load` event listener or adding an additonal line of code to call a previously created function. 
+
+####What is meant by the term "code coverage" in JS? 
+This term refers to test coverage; that is, how much of your code is covered by tests. The more thorough your tests test the app, the better your code coverage is.
+
+
