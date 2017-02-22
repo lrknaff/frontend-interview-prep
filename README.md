@@ -1,6 +1,10 @@
 #Interview Prep
 >Questions I've been asked and some other good things to know
 
+###[HTML/CSS](https://github.com/lrknaff/frontend-interview-prep/blob/master/html-css.md)
+###[JavaScript](https://github.com/lrknaff/frontend-interview-prep/blob/master/js.md)
+###[Questions for the Interviewer](https://github.com/lrknaff/frontend-interview-prep/blob/master/questions-to-ask-companies.md)
+
 ####Resources:
 [10 Questions Every JS Developer Should Know](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95#.wnhwoz4cx)
 
